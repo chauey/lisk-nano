@@ -1,10 +1,9 @@
 # Lisk Nano
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/LiskHQ/lisk-nano.svg)](https://greenkeeper.io/)
-
 [![Build Status](https://jenkins.lisk.io/buildStatus/icon?job=lisk-nano/development)](https://jenkins.lisk.io/job/lisk-nano/job/development)
 [![Coverage Status](https://coveralls.io/repos/github/LiskHQ/lisk-nano/badge.svg?branch=development)](https://coveralls.io/github/LiskHQ/lisk-nano?branch=development)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](http://www.gnu.org/licenses/gpl-3.0)
+[![Join the chat at https://gitter.im/LiskHQ/lisk](https://badges.gitter.im/LiskHQ/lisk.svg)](https://gitter.im/LiskHQ/lisk?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Development
 
@@ -58,26 +57,26 @@ npm run start
 
 ### Windows
 
-Build package for Windows.
+Build package for Windows (on Windows in [Git BASH](https://git-for-windows.github.io/)).
 
 ```
-npm run dist:win
+npm run pack:win
 ```
 
 ### macOS
 
-Build package for macOS.
+Build package for macOS (on macOs)
 
 ```
-npm run dist:mac
+npm run pack 
 ```
 
 ### Linux
 
-Build package for Linux.
+Build package for Linux (on Linux).
 
 ```
-npm run dist:linux
+npm run pack 
 ```
 
 ## Run unit tests
