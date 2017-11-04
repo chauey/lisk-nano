@@ -54,10 +54,6 @@ node('lisk-nano') {
         cp -r ~/cache/development/node_modules ./ || true
         npm install
         ./node_modules/protractor/bin/webdriver-manager update
-        # cache nightly builds (development) only to save space
-        if [ $BRANCH_NAME = "development" ]; then
-            rsync -axl --delete $WORKSPACE/node_modules/ ~/cache/development/node_modules/ || true
-        fi
         '''
       } catch (err) {
         echo "Error: ${err}"
@@ -145,6 +141,11 @@ node('lisk-nano') {
     pkill --echo -f "Xvfb :1$N" -9 || echo "pkill returned code $?"
     pgrep --list-full -f "webpack.*808$N" || true
     pkill --echo -f "webpack.*808$N" -9 || echo "pkill returned code $?"
+
+    # cache nightly builds (development) only to save space
+    if [ $BRANCH_NAME = "development" ]; then
+        rsync -axl --delete $WORKSPACE/node_modules/ ~/cache/development/node_modules/ || true
+    fi
     '''
     dir('node_modules') {
       deleteDir()
