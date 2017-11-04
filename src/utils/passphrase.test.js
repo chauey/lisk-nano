@@ -1,8 +1,7 @@
 import { expect } from 'chai';
+import bip39 from 'bip39';
 import { generateSeed, generatePassphrase, isValidPassphrase } from './passphrase';
 
-if (global._bitcore) delete global._bitcore;
-const mnemonic = require('bitcore-mnemonic');
 
 const randoms = [
   0.35125316992864564, 0.6836880327771695, 0.05720201294124072, 0.7136064360838184,
@@ -115,7 +114,7 @@ describe('Passphrase', () => {
 
     it('generates a valid random passphrase from a given seed', () => {
       const passphrase = generatePassphrase({ seed });
-      expect(mnemonic.isValid(passphrase)).to.be.equal(true);
+      expect(bip39.validateMnemonic(passphrase)).to.be.equal(true);
     });
   });
 
